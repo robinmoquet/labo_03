@@ -1,6 +1,6 @@
 import {Body, Controller, Delete, Get, Param, Post, Put} from '@nestjs/common';
 import {TodosService} from './todos.service';
-import {Todo} from './todo.entity';
+import {Todo} from './models/todo.entity';
 import {DeleteResult, UpdateResult} from 'typeorm';
 
 @Controller('todos')

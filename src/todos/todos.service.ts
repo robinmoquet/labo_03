@@ -1,5 +1,5 @@
 import {Injectable} from '@nestjs/common';
-import {Todo} from './todo.entity';
+import {Todo} from './models/todo.entity';
 import {InjectRepository} from '@nestjs/typeorm';
 import {DeleteResult, Repository, UpdateResult} from 'typeorm';
 

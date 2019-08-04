@@ -6,13 +6,18 @@ import { SECRET_KEY } from '../config/security';
 import { UserService } from '../user/user.service';
 import { LocalStrategy } from './local.strategy';
 import { UserModule } from '../user/user.module';
+import { JwtStrategy } from './jwt.strategy';
 
 @Module({
   imports: [
     UserModule,
     PassportModule,
+    JwtModule.register({
+      secret: SECRET_KEY,
+      signOptions: { expiresIn: '1 years' },
+    }),
   ],
-  providers: [AuthService, LocalStrategy],
+  providers: [AuthService, LocalStrategy, JwtStrategy],
   exports: [AuthService],
 })
 export class AuthModule {}

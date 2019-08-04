@@ -1,17 +1,16 @@
-import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Todo {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column('text')
-    topic: string;
+  @Column('text')
+  topic: string;
 
-    @Column({ length: 50 })
-    status: string;
+  @Column({ length: 50 })
+  status: string;
 
-    @Column('int')
-    priority: number;
-
+  @Column('int')
+  priority: number;
 }

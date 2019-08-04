@@ -1,14 +1,13 @@
 export enum Status {
-    success = 'success',
-    errors = 'errors',
-    warning = 'warning',
+  success = 'success',
+  errors = 'errors',
+  warning = 'warning',
 }
 
 export interface ResponseDto<T> {
+  status: Status;
 
-    status: Status;
+  data?: T;
 
-    data?: T;
-
-    error?: object|string;
+  error?: object | string;
 }

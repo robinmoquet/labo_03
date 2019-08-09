@@ -13,6 +13,7 @@ export class UserController {
 
   @Post()
   async createUser(@Body() user: User): Promise<ResponseDto<any>> {
+    console.log(user);
     return {
       status: Status.success,
       data: await this.userRepository.createUser(user),

@@ -21,7 +21,7 @@ export class AppController {
 
   @UseGuards(AuthGuard('local'))
   @Post('login')
-  async login(@Request() req): Promise<ResponseDto<{access_token: string}>> {
+  async login(@Request() req): Promise<ResponseDto<{access_token: string, user: User}>> {
     return {
       status: Status.success,
       data: await this.authService.login(req.user)

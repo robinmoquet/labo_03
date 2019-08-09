@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import { User } from '../../user/models/user.entity';
 
 @Entity()
 export class Todo {
@@ -13,4 +14,8 @@ export class Todo {
 
   @Column('int')
   priority: number;
+
+  @ManyToOne(type => User, user => user.todos)
+  user: User;
+
 }

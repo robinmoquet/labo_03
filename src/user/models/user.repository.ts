@@ -18,8 +18,9 @@ export class UserRepository extends Repository<User> {
     return result;
   }
 
-  async findUserByEmail(email: string): Promise<User | null> {
-    const user = await this.findOne({ email });
+  async findUserByEmail(email: string, payload: object = {}): Promise<User | null> {
+    const user = await this.findOne({ email }, payload);
+    console.log(user);
     return user === undefined ? null : user;
   }
 }
